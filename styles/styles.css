@@ -1,0 +1,31 @@
+#newDiv {
+    background-color: lightgray;
+    min-height: 100px;
+    width: 25%;
+    border-radius: 3px;
+
+    padding: 5px 0 10px 0;
+  }
+
+  #title {
+    text-align: center;
+  }
+
+  li {
+    cursor: pointer;
+  }
+
+  li:hover {
+    color: red;
+    
+  }
+
+  .delete-span{
+    display:none;
+  }
+
+  .delete-span:hover{
+    display:inline;
+    color:red;
+    font-size:15px;
+  }
