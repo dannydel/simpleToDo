@@ -2,14 +2,14 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
     //IIFE to render new Dom Elements
     (function () {
-      //create div inside map div
+      //create div inside root div
       let newDiv = document.createElement("div");
       newDiv.id = "newDiv";
 
       //create title inside new div
       let header2 = document.createElement("h2");
       header2.id = "title";
-      let textNode = document.createTextNode("Simple List:");
+      let textNode = document.createTextNode("Simple List");
       header2.appendChild(textNode);
       newDiv.appendChild(header2);
 
@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
       //Add first item to list to show there is a list
       let listItem = document.createElement("li");
+      listItem.title = "Delete Me!";
       let listItemTextNode = document.createTextNode("First Node!");
       listItem.appendChild(listItemTextNode);
       
@@ -26,8 +27,8 @@ document.addEventListener("DOMContentLoaded", function (event) {
       newDiv.appendChild(list);
 
       // add stuff to map div
-      let mapDiv = document.getElementById("map");
-      mapDiv.appendChild(newDiv);
+      let rootDiv = document.getElementById("root");
+      rootDiv.appendChild(newDiv);
 
     }());
 
@@ -59,8 +60,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
       li.appendChild(newItemNode);
       li.title = "Delete Me";
 
-      li.innerHTML += createXSpan();
-
       list.appendChild(li);
       clearTextBox("textBox");
     }
@@ -73,11 +72,6 @@ document.addEventListener("DOMContentLoaded", function (event) {
     function getEventTarget(e) {
       e = e || window.event;
       return e.target || e.srcElement;
-    }
-
-    function createXSpan(){
-        let s = "<span class='delete-span'> x </span>";
-        return s;
     }
 
     function clearTextBox(textBoxId){
